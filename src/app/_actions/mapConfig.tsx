@@ -1,4 +1,4 @@
-import mapsConfig from "../../../config/maps.json";
+import * as mapsConfig from "../../../resources/maps.json";
 
 export interface MapConfig {
   id: string;
@@ -10,7 +10,7 @@ export interface MapConfig {
 }
 
 export function getMapsConfig(): MapConfig[] {
-    return mapsConfig;
+  return mapsConfig;
 }
 
 export function getMapConfigById(mapId: string): MapConfig | undefined {

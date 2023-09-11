@@ -5,7 +5,7 @@ import { MapPoint } from "@/app/_actions/point";
 import { ImageLayer } from "@/components/map/ImageLayer";
 import MapFeatureGroup from "@/components/map/MapFeatureGroup";
 import MapLabelGroup from "@/components/map/MapLabelGroup";
-import { reportProblemUrl } from "../../../config/params";
+import { reportProblemUrl } from "../../../resources/params";
 import { useTranslation } from "@/i18n/client";
 import "@/styles/map.css";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
@@ -41,7 +41,7 @@ export function Map({
 }) {
   const { t } = useTranslation(lng, "common");
   const messages: any = t("messages", { returnObjects: true });
-  const center = new LatLng(0,0);
+  const center = new LatLng(0, 0);
   const imageBounds = latLngBounds([
     new LatLng(
       -imageDimensions[1] - padding[1],
@@ -59,7 +59,7 @@ export function Map({
       const currentZoom = mapRef.current.getZoom();
       mapRef.current.setView(currentCenter, currentZoom, {
         animate: false,
-        noMoveStart: true
+        noMoveStart: true,
       });
     }
   }, [selectedTags]);

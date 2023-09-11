@@ -1,5 +1,4 @@
-import { getJSONFile } from "@/app/_actions/common";
-import { configPath } from "../../../config/params";
+import * as CategoriesJson from "../../../resources/categories.json";
 import { Point } from "@/app/_actions/point";
 
 export interface Category {
@@ -19,8 +18,8 @@ interface OutputTag {
   qty: number;
 }
 
-async function getCategories(mapId: string): Promise<Category[]> {
-  return await getJSONFile(`${configPath}/categories.json`);
+function getCategories(mapId: string): Category[] {
+  return CategoriesJson;
 }
 
 export async function getCategoriesFilteredAndCounted(
