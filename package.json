@@ -1,45 +1,21 @@
 {
-  "name": "maprauders",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@heroicons/react": "^2.0.18",
-    "@types/mapbox-gl": "^2.7.11",
-    "@types/node": "20.4.1",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
-    "accept-language": "^3.0.18",
-    "autoprefixer": "10.4.14",
-    "eslint": "8.44.0",
-    "eslint-config-next": "13.4.9",
-    "mapbox-gl": "^2.15.0",
-    "next": "13.4.9",
-    "next-i18next": "^14.0.0",
-    "next-themes": "^0.2.1",
-    "postcss": "8.4.25",
-    "sharp": "^0.32.2",
-    "swr": "^2.2.2",
-    "typescript": "5.1.6"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@types/dompurify": "^3.0.2",
-    "@types/leaflet": "^1.9.3",
-    "dompurify": "^3.0.5",
-    "i18next": "^23.2.8",
-    "i18next-browser-languagedetector": "^7.1.0",
-    "i18next-resources-to-backend": "^1.1.4",
-    "leaflet": "^1.9.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-i18next": "^13.0.1",
-    "react-inlinesvg": "^3.0.2",
-    "react-leaflet": "^4.2.1",
-    "tailwindcss": "3.3.2"
-  }
+    "eslint": "^8.48.0",
+    "prettier": "^3.0.3",
+    "tsconfig": "*",
+    "turbo": "latest"
+  },
+  "name": "maprauders",
+  "packageManager": "yarn@1.22.10",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

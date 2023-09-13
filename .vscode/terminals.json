@@ -1,0 +1,24 @@
+{
+  "autorun": true,
+  "autokill": true,
+  "terminals": [
+    {
+      "name": "root",
+      "cwd": "[workspaceFolder]",
+      "open": true,
+      "focus": true
+    },
+    {
+      "name": "packages",
+      "cwd": "[workspaceFolder]/packages",
+      "open": true,
+      "focus": true
+    },
+    {
+      "name": "maps",
+      "cwd": "[workspaceFolder]/apps/maps",
+      "open": true,
+      "focus": true
+    }
+  ]
+}
