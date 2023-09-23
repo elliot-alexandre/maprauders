@@ -1,4 +1,4 @@
-import { configPathI18n } from "../../../resources/params";
+import { configPathI18n } from "../../../config/params";
 import { getJSONFile } from "./common";
 
 export function getMenuItems(lng: string) {

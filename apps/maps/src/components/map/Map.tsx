@@ -5,16 +5,15 @@ import { MapPoint } from "@/app/_actions/point";
 import { ImageLayer } from "@/components/map/ImageLayer";
 import MapFeatureGroup from "@/components/map/MapFeatureGroup";
 import MapLabelGroup from "@/components/map/MapLabelGroup";
-import { reportProblemUrl } from "../../../resources/params";
 import { useTranslation } from "@/i18n/client";
 import "@/styles/map.css";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
-import { randomUUID } from "crypto";
-import { CRS, LatLng, latLngBounds, Map as LeafletMap, map } from "leaflet";
+import { CRS, LatLng, latLngBounds, Map as LeafletMap } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import Link from "next/link";
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { MapContainer, ZoomControl } from "react-leaflet";
+import { reportProblemUrl } from "../../../config/params";
 
 export function Map({
   lng,

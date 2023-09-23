@@ -1,5 +1,5 @@
-import { getJSONFile, resourcesPath } from "@/app/_actions/common";
-import { configPath, configPathI18n } from "../../../resources/params";
+import { getJSONFile } from "@/app/_actions/common";
+import { configPath, configPathI18n } from "../../../config/params";
 import { mergeData } from "./common";
 
 export interface Point {
@@ -25,7 +25,7 @@ export interface MapPoint {
 }
 
 export async function getPoints(mapId: string): Promise<Point[]> {
-  return getJSONFile(`${resourcesPath}/maps/${mapId}/points.json`);
+  return getJSONFile(`${configPath}/maps/${mapId}/points.json`);
 }
 
 function getPointsTextByLang(mapId: string, lang: string) {

@@ -4,7 +4,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "reset": "rm -rf ./node_modules packages/**/node_modules && yarn"
   },
   "devDependencies": {
     "eslint": "^8.48.0",

@@ -1,0 +1,16 @@
+{
+  "name": "supabase",
+  "version": "1.0.0",
+  "private": true,
+  "description": "For migrations, db and serverless for maprauders.",
+  "license": "MIT",
+  "scripts": {
+    "loginRemote": ". ./.env && supabase login =$SUPABASE_ACCESS_TOKEN",
+    "start": ". ./.env && supabase start",
+    "remote": ". ./.env && supabase link --project-ref=$SUPABASE_PROJECT_REF --password=$SUPABASE_DB_PASSWORD",
+    "pull": ". ./.env && supabase db pull -p=$SUPABASE_DB_PASSWORD -s --db-url=$"
+  },
+  "devDependencies": {
+    "supabase": "^1.93.0"
+  }
+}

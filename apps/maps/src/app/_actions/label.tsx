@@ -1,5 +1,5 @@
-import { getJSONFile, resourcesPath } from "@/app/_actions/common";
-import { configPathI18n } from "../../../resources/params";
+import { getJSONFile } from "@/app/_actions/common";
+import { configPath, configPathI18n } from "../../../config/params";
 import { mergeData } from "./common";
 
 export interface Label {
@@ -26,7 +26,7 @@ export interface MapLabel {
 }
 
 export async function getLabels(mapId: string): Promise<Label[]> {
-  return getJSONFile(`${resourcesPath}/maps/${mapId}/labels.json`);
+  return getJSONFile(`${configPath}/maps/${mapId}/labels.json`);
 }
 
 function getLabelsTextByLang(mapId: string, lang: string) {

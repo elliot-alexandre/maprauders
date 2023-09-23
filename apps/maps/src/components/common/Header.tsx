@@ -1,12 +1,12 @@
 "use client";
 import AppLogo from "@/components/common/AppLogo";
+import LangSwitcher from "@/components/common/LangSwitcher";
+import ThemeSwitcher from "@/components/common/ThemeSwitcher";
+import { useTranslation } from "@/i18n/client";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { useState } from "react";
-import { useTranslation } from "@/i18n/client";
-import ThemeSwitcher from "@/components/common/ThemeSwitcher";
-import LangSwitcher from "@/components/common/LangSwitcher";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import { links } from "../../../resources/params";
+import { links } from "../../../config/params";
 
 export function Header({
   lng,

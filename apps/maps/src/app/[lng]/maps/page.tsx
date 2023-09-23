@@ -3,21 +3,11 @@ import { getMapsConfig } from "@/app/_actions/mapConfig";
 import { getMenuItems } from "@/app/_actions/menu";
 import { Header } from "@/components/common/Header";
 import MapCard from "@/components/menu/MapCard";
-import { readFileSync } from "fs";
 import Link from "next/link";
 
 export default async function Maps({ params }: { params: any }) {
   const { lng } = params;
 
-  const res = await fetch("http://localhost:3000/api/fetch-ressources", {
-    method: "POST",
-    body: JSON.stringify({ input: { fileName: "maps.json" } }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  console.log(res.body);
   let items = await getMenuItems(lng);
   const mapsConfig = getMapsConfig();
   items = mergeData(mapsConfig, items);

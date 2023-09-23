@@ -9,6 +9,6 @@ export const links = [
   },
 ];
 
-export const configPath = "resources";
+export const configPath = "config";
 export const configPathI18n = "src/i18n/locales";
 export const reportProblemUrl = "https://github.com/longopy";
