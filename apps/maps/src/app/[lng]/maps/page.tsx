@@ -3,6 +3,7 @@ import { getMapsConfig } from "@/app/_actions/mapConfig";
 import { getMenuItems } from "@/app/_actions/menu";
 import { Header } from "@/components/common/Header";
 import MapCard from "@/components/menu/MapCard";
+import supabase from "@/utils/supabase";
 import Link from "next/link";
 
 export default async function Maps({ params }: { params: any }) {
@@ -11,6 +12,32 @@ export default async function Maps({ params }: { params: any }) {
   let items = await getMenuItems(lng);
   const mapsConfig = getMapsConfig();
   items = mergeData(mapsConfig, items);
+  const { data, error } = await supabase
+    .from("maps")
+    .select(
+      `
+  id,
+  name,
+  created_at,
+  updated_at,
+  in_progress,
+  map_conifg,
+  total_level,
+  content_id,
+
+  junction_i18n (
+    id,
+    i18n (
+      local_id,
+      short_text,
+      long_text
+    )
+  )
+  `
+    )
+    .eq("junction_i18n.i18n.local_id", "fc2e5927-70e4-4e69-a655-2ba557b61932");
+
+  console.log(JSON.stringify(data, null, 2));
   return (
     <div>
       <Header lng={params.lng} themeSwitcher={true} />
@@ -33,6 +60,13 @@ export default async function Maps({ params }: { params: any }) {
               </Link>
             ))}
           </div>
+          <pre>
+            {data ? (
+              <code>{JSON.stringify(data, null, 2)}</code>
+            ) : (
+              <code></code>
+            )}
+          </pre>
         </div>
       </main>
     </div>

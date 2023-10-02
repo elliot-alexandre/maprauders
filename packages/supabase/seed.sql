@@ -13,14 +13,43 @@ values
     );
 
 insert into
-    maps (id, name, in_progress, map_conifg, total_level)
+    junction_i18n (id)
+values
+    ('8f3b36f4-3012-45f0-9313-0ee7fd2e0975');
+
+insert into
+    i18n (long_text, short_text, local_id, junction_i18n_id)
+values
+    (
+        'Una prisión de trabajo autosuficiente, una fortaleza llena de los criminales más peligrosos de la galaxia.',
+        'Colonia Penal Beta 5',
+        'fc2e5927-70e4-4e69-a655-2ba557b61932',
+        '8f3b36f4-3012-45f0-9313-0ee7fd2e0975'
+    ),
+    (
+        'A self sufficient labour prison facility, a fortress filled with the most dangerous criminals in the galaxy.',
+        'Penal Colony Beta 5',
+        'dd0e390d-713a-4df1-9cfa-866af0877dff',
+        '8f3b36f4-3012-45f0-9313-0ee7fd2e0975'
+    );
+
+insert into
+    maps (
+        id,
+        name,
+        in_progress,
+        map_conifg,
+        total_level,
+        content_id
+    )
 values
     (
         1,
         'penal-colony',
         true,
         '{    "zoom": -2,     "minZoom": -1,     "maxZoom": 3,     "padding": [600, 600],     "imageDimensions": [1172.03, 792.57]}',
-        3
+        3,
+        '8f3b36f4-3012-45f0-9313-0ee7fd2e0975'
     );
 
 insert into

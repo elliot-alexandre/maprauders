@@ -9,8 +9,14 @@
       "focus": true
     },
     {
-      "name": "packages",
-      "cwd": "[workspaceFolder]/packages",
+      "name": "codegen",
+      "cwd": "[workspaceFolder]/packages/codegen",
+      "open": true,
+      "focus": true
+    },
+    {
+      "name": "supabase",
+      "cwd": "[workspaceFolder]/packages/supabase",
       "open": true,
       "focus": true
     },
