@@ -5,7 +5,6 @@ import "@/styles/globals.css";
 import { dir } from "i18next";
 import type { Metadata } from "next";
 
-
 export const metadata: Metadata = {
   title: "Maprauders",
   description: "Marauders Interactive Maps",
@@ -40,7 +39,11 @@ export default function RootLayout({
   params: { lng: string };
 }) {
   return (
-    <html lang={params.lng} dir={dir(params.lng)} className={montserrat.className}>
+    <html
+      lang={params.lng}
+      dir={dir(params.lng)}
+      className={montserrat.className}
+    >
       <body>
         <Providers>{children}</Providers>
         <div id="modal-portal" />

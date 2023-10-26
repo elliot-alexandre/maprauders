@@ -2,11 +2,9 @@
 import AppLogo from "@/components/common/AppLogo";
 import LangSwitcher from "@/components/common/LangSwitcher";
 import ThemeSwitcher from "@/components/common/ThemeSwitcher";
-import { useTranslation } from "@/i18n/client";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { useState } from "react";
-import { links } from "../../../config/params";
 
 export function Header({
   lng,
@@ -15,8 +13,8 @@ export function Header({
   lng: string;
   themeSwitcher: boolean;
 }) {
-  const { t } = useTranslation(lng);
-  const headers: any = t("headers", { returnObjects: true });
+  // const { t } = useTranslation(lng);
+  // const headers: any = t("headers", { returnObjects: true });
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -50,14 +48,28 @@ export function Header({
         }`}
       >
         <div className="text-sm lg:flex-grow rounded border-black mr-4">
-          {links.map(({ id, route }) => (
+          {/* {links.map(({ id, route }) => (
             <span
               key={route}
               className="header block mt-6 lg:inline-block lg:mt-0 text-white-200 mr-6 align-middle lg:mt0 text-base text-light hover:text-accent font-medium underline-none hover:underline-offset-8 hover:underline"
             >
               <Link href={`/${lng}${route}`}>{headers[id]}</Link>
             </span>
-          ))}
+          ))} */}
+
+          <span
+            key={"maps"}
+            className="header block mt-6 lg:inline-block lg:mt-0 text-white-200 mr-6 align-middle lg:mt0 text-base text-light hover:text-accent font-medium underline-none hover:underline-offset-8 hover:underline"
+          >
+            <Link href={`/${lng}${"/maps"}`}>{"maps"}</Link>
+          </span>
+
+          <span
+            key={"about"}
+            className="header block mt-6 lg:inline-block lg:mt-0 text-white-200 mr-6 align-middle lg:mt0 text-base text-light hover:text-accent font-medium underline-none hover:underline-offset-8 hover:underline"
+          >
+            <Link href={`/${lng}${"/about"}`}>{"about"}</Link>
+          </span>
         </div>
         <div className="flex gap-3 text-white mt-2 lg:mt-0 mr-4 lg:mr-0 mb-2 lg:mb-0 justify-end">
           {themeSwitcher ? <ThemeSwitcher /> : null}

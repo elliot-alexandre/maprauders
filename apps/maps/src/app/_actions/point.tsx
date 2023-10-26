@@ -64,3 +64,22 @@ export async function getMapPoints(
   });
   return pointsDataByTag;
 }
+
+export async function getMapSanitizePoints(mapId: string, points: Point[]) {
+  points.map((point) => {
+    const [lat, lng] = point.position;
+    return {
+      id: point.id,
+      lat: lat,
+      lng: lng,
+      title: point.title,
+      description: point.description,
+      tag: point.tag,
+      iconPath: `/images/icons/points/${point.tag}.svg`,
+      resourcePath: point.resource
+        ? `/images/maps/${mapId}/resources/${point.resource}`
+        : undefined,
+    };
+  });
+  return pointsDataByTag;
+}

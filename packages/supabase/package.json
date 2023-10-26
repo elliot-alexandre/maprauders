@@ -14,7 +14,8 @@
     "pull": ". ./.env && supabase db pull -p=$SUPABASE_DB_PASSWORD -s --db-url=$",
     "reset": ". ./.env && supabase db reset",
     "dev": "yarn reset && yarn start",
-    "generate": ". ./.env && supabase gen types typescript --project-id $SUPABASE_PROJECT_REF > database.types.ts",
+    "generate-remote": ". ./.env && supabase gen types typescript --project-id $SUPABASE_PROJECT_REF --schema public > database.types.ts",
+    "generate-local": ". ./.env && supabase gen types typescript --db-url $SUPABASE_DB_URL_LOCAL --schema public > database.types.ts",
     "new-migration": "supabase db diff -f $@"
   },
   "dependencies": {
